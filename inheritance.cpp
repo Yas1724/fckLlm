@@ -5,9 +5,10 @@ using namespace std;
 class youtubeChannel{
 private:
     string Name;
-    string OwnerName;
     int subscriberCount;
     list<string>publishedVideoTitle;
+protected: 
+    string OwnerName; //we move the ownerName from private to protected so that we can use this variable in the derived class methord. 
 
 public:
     youtubeChannel(string name, string ownername){
@@ -48,7 +49,7 @@ public:
 //all the properties and methords of base class is inherited to the derived class
 //we can also write methords and properties only for the derived class itself, 
         void properties(){
-            cout<<"hello";
+            cout<<OwnerName<<" is this is the special methord only for child class, parent cant get that method"<<endl;
         }
 };
 
