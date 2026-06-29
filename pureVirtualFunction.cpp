@@ -22,7 +22,12 @@ public:
 int main(){
     instrument* i1 = new piano();
     instrument* i2 = new guitar();
+    /* i1->MakeSound();
+    i2->MakeSound(); */
+    //making array of instrument, so that we wont have to call the method again for different instrument child class 
+    instrument* instr[2] = {i1,i2};
+    for(int i=0; i<2; i++){
+        instr[i]->MakeSound();
+    }
 
-    i1->MakeSound();
-    i2->MakeSound();
 }
