@@ -16,8 +16,14 @@ struct YoutubeChannel{
         SubscriberCount = subscount;
      }
 };
+//Compiler does not know how to print an user defined datatype, so we will use do operator overloading in order to make it work
+void operator<<(ostream& COUT, YoutubeChannel& ytchnl){
+    COUT<<"Name: "<<ytchnl.Name<<endl;
+    COUT<<"subscriber: "<<ytchnl.SubscriberCount<<endl;
+}
 
 int main(){
 //using constructor to create object
     YoutubeChannel yt1 = YoutubeChannel("yassh", 1000);
+    cout<<yt1;
 }
